@@ -32,8 +32,6 @@ The weights and biases of the first two layers are being initialized with a Kaim
 
 # Plot of rewards
 
-just the learning curve image
-
 ![Learning curve](reacher_ppo_nocritic.png)
 
 

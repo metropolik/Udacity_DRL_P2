@@ -30,11 +30,6 @@ DEFAULT_CHECKPOINT = os.path.join(HERE, "reacher_ppo_nocritic.policy")
 
 
 def load_policy(checkpoint_path, state_size, action_size):
-    """Rebuild the policy from a checkpoint, inferring the hidden width from it.
-
-    Older checkpoints also carry an `obs_norm` entry from the observation
-    normalizer that used to be in the training script; it is ignored.
-    """
     chkpt = torch.load(checkpoint_path, map_location=device, weights_only=False)
     hidden = chkpt["policy"]["fc_net.fc1.weight"].shape[0]
 
@@ -51,11 +46,6 @@ def load_policy(checkpoint_path, state_size, action_size):
 
 
 def run_episode(envs, policy, mode, tmax, refresh, train_mode):
-    """One episode. `mode` is 'greedy', 'sample' or 'random'. Returns scores.
-
-    `train_mode` is Unity's time scale, not ours: False runs the physics at
-    real time so you can watch it, True runs it as fast as it will go.
-    """
     states = envs.reset(train_mode=train_mode)
     scores = np.zeros(envs.num_envs)
     on_target_steps = 0
