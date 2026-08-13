@@ -8,7 +8,7 @@ And this turned out to be good enough to actually solve the task.
 
 ## Learning Algorithm
 
-The learning algorithm is a simple PPO without critic with 4 SGD steps per 20 envs trajectory unroll. The overall code template is from the pong-PPO.ipynb so some parts may be similar to there.
+The learning algorithm is a simple PPO without critic with 4 SGD steps per 20 envs trajectory unroll. The overall code template is from the pong-PPO.ipynb from the udacity courses deep-rl github repo, so some parts may be similar to there.
 
 The best run I have done with this code lands at a average return of 37. When watching the environment playout, it actually shows that this is extremly close to a perfect score and the end effector of the robots is virtually always in the target ball of all 20 envs.
 
