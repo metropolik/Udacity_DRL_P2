@@ -34,6 +34,8 @@ The weights and biases of the first two layers are being initialized with a Kaim
 
 just the learning curve image
 
+![Learning curve](reacher_ppo_nocritic.png)
+
 
 # Outlook future ideas
 

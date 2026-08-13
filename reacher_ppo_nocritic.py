@@ -23,7 +23,9 @@ except ImportError:  # the package is vendored, not installed
     sys.path.insert(0, os.path.join(REPO_ROOT, "python"))
     from unityagents import UnityEnvironment
 
-DEFAULT_BINARY = os.path.join(P2_DIR, "Reacher_Linux_20", "Reacher.x86_64")
+DEFAULT_BINARY = os.path.join(HERE, "Reacher_Linux_20", "Reacher.x86_64")
+if not os.path.exists(DEFAULT_BINARY):  # not vendored, sitting next to the repo
+    DEFAULT_BINARY = os.path.join(P2_DIR, "Reacher_Linux_20", "Reacher.x86_64")
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 

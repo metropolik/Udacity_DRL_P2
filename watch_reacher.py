@@ -6,26 +6,6 @@
     python watch_reacher.py --random             # a random policy, for scale
     python watch_reacher.py --episodes 3         # then stop
     python watch_reacher.py --headless           # numbers only, ~20x faster
-
-Ctrl-C at any point; the Unity process is closed cleanly.
-
-Why `--sample` matters here
-===========================
-`reacher_ppo_nocritic.py --play` evaluates the MEAN action. The score printed
-during training is the SAMPLED action, with the policy's own std (~0.37 at the
-end of run D). Those are different policies and they score differently, so if
-you are chasing a wobble in the training curve, `--sample` is the one that
-reproduces it.
-
-The live line
-=============
-    ep 1 | step  480/1001 | score 15.42 | arms on target 17/20 | 62% of steps
-
-`arms on target` is how many of the 20 hands are inside the goal sphere right
-now (Unity pays 0.01-0.04 for exactly that), and the trailing percentage is the
-share of all steps so far in which the average arm was on target. A solved
-policy sits near 20/20 once the arms have caught up with their spheres, and the
-score is just that percentage times ~33.
 """
 
 import argparse
