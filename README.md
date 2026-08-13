@@ -10,6 +10,13 @@ This repo is for solving the "Reacher" unity game engine gym. One environment co
 
 Two variants: single arm and twenty arms gyms. We will only consider the 20 arm gym in this project repo.
 
+The entry point for training is `reacher_ppo_nocritic.py`.
+Training should be done with at least 2000 iterations.
+
+There is also a script for watching the trained policy. It can be viewed with:
+
+`python watch_reacher.ppy`
+
 #### State and action space
 
 The output of the gym env and the input to the policy is a (20, 33) float64 tensor.
