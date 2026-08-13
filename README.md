@@ -55,31 +55,23 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 Really only pytorch, numpy and the reacher environment
 
-Create and activate the Conda environment from the repository root:
+Create and activate the conda env:
 
 ```bash
 conda env create -f environment.yml
 conda activate p2-continuous-control
 ```
 
-That covers the four dependencies the two scripts need: PyTorch, NumPy, Matplotlib
-(for the learning curve plot) and the Reacher environment itself. The Reacher
-environment is driven through the `unityagents` package (ml-agents 0.4), which is
-vendored in the `python/` folder of the Udacity course repo rather than installed
-from PyPI, so `environment.yml` only installs the three packages `unityagents` needs
-at runtime (`grpcio`, `pillow`, `protobuf==3.20.3`). Two pins matter:
-`protobuf==3.20.3`, because the generated `*_pb2.py` files are protoc 3.5.2 era and
-protobuf >= 4.21 rejects them, and `numpy<2`, because `unityagents` still uses the
-removed `np.float_`.
+Matplotlib is in there as well, for the learning curve plot. The rest (grpcio, pillow,
+protobuf) is only what `unityagents` needs to talk to the Unity binary. Two versions
+are pinned: protobuf 3.20.3, because the generated `*_pb2.py` files are too old for
+protobuf 4, and numpy < 2, because `unityagents` still uses `np.float_`.
 
-The Unity binary for the 20-arm variant is included in this repo under
-`Reacher_Linux_20/`, which is where both scripts look by default. If it is instead
-unpacked next to the repository folder, as in the course repo layout, that location is
-used as a fallback. Either way `--binary <path>` overrides it.
+The Reacher binary for the 20 arm variant is in `Reacher_Linux_20/`. Both scripts look
+there first and fall back to `../Reacher_Linux_20`. `--binary` overrides it.
 
-The `unityagents` package is not included. It is imported from `../../python` when it
-is not installed, which is where it sits when this repo is cloned into the
-`p2_continuous-control` folder of the Udacity course repo.
+`unityagents` itself is not in this repo. It gets imported from `../../python`, the
+folder in the course repo.
 
 
 

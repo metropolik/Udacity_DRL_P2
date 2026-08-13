@@ -26,7 +26,7 @@ from reacher_ppo_nocritic import (  # noqa: E402
     device,
 )
 
-DEFAULT_CHECKPOINT = os.path.join(HERE, "runs", "D_noobsnorm_lr3e-4.policy")
+DEFAULT_CHECKPOINT = os.path.join(HERE, "reacher_ppo_nocritic.policy")
 
 
 def load_policy(checkpoint_path, state_size, action_size):

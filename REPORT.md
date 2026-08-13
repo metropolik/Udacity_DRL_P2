@@ -19,10 +19,10 @@ For simplicity sake, the submitted code does not contain the entropy term as it 
 ## Chosen hyperparameters
 The training is extremly sensitive to the learning rate. While I initially tried 1e-4 it was quite slow. 3e-4 is significantly faster but stops learning at a average reward of about 31.
 
-I then chose to retrain from scratch with a simple learning schedule going from a 5e-4 to 1e-e4. These are hard changes every 400 steps of 1e-4. They can also be seen in the learning curve as dips.
+I then chose to retrain from scratch with a simple learning schedule going from a 5e-4 to 1e-4. These are hard changes every 400 steps of 1e-4. They can also be seen in the learning curve as dips.
 
 Other hyper parameters:
-Discount at 0.99, epsilon at 0.01 and epsilon decay at 0.999, all left unchanged from the pong-PPO.ipynb from the course.
+Discount at 0.99, epsilon at 0.1 and epsilon decay at 0.999, all left unchanged from the pong-PPO.ipynb from the course.
 
 
 # Model Architecture
