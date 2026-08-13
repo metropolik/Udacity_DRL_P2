@@ -4,6 +4,8 @@ name: p2-continuous-control
 # grpc, protobuf, numpy and PIL. Two pins matter:
 #   protobuf==3.20.3  -- the *_pb2.py files are too old for protobuf 4
 #   numpy<2           -- unityagents/environment.py uses np.float_
+#
+# unityagents needs to be installed with --no-deps so it does not download tensorflow
 
 channels:
   - conda-forge

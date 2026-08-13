@@ -60,6 +60,7 @@ Create and activate the conda env:
 ```bash
 conda env create -f environment.yml
 conda activate p2-continuous-control
+pip install --no-deps unityagents==0.4.0
 ```
 
 Matplotlib is in there as well, for the learning curve plot. The rest (grpcio, pillow,
@@ -70,8 +71,6 @@ protobuf 4, and numpy < 2, because `unityagents` still uses `np.float_`.
 The Reacher binary for the 20 arm variant is in `Reacher_Linux_20/`. Both scripts look
 there first and fall back to `../Reacher_Linux_20`. `--binary` overrides it.
 
-`unityagents` itself is not in this repo. It gets imported from `../../python`, the
-folder in the course repo.
 
 
 
